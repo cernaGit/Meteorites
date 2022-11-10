@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4662FF5A291D9A4800A37D65 /* MeteoritesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF59291D9A4800A37D65 /* MeteoritesApp.swift */; };
+		4662FF5C291D9A4800A37D65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF5B291D9A4800A37D65 /* ContentView.swift */; };
+		4662FF5E291D9A4B00A37D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4662FF5D291D9A4B00A37D65 /* Assets.xcassets */; };
+		4662FF61291D9A4B00A37D65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4662FF60291D9A4B00A37D65 /* Preview Assets.xcassets */; };
+		4662FF63291D9A4B00A37D65 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF62291D9A4B00A37D65 /* Persistence.swift */; };
+		4662FF66291D9A4B00A37D65 /* Meteorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF64291D9A4B00A37D65 /* Meteorites.xcdatamodeld */; };
+		4662FF71291D9B8D00A37D65 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF70291D9B8D00A37D65 /* Database.swift */; };
+		4662FF74291D9C8800A37D65 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF73291D9C8800A37D65 /* MapView.swift */; };
+		4662FF76291D9CCD00A37D65 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF75291D9CCD00A37D65 /* LocationManagerDelegate.swift */; };
+		4662FF78291D9D7B00A37D65 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF77291D9D7B00A37D65 /* MapViewModel.swift */; };
+		4662FF7A291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF79291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4662FF56291D9A4800A37D65 /* Meteorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4662FF59291D9A4800A37D65 /* MeteoritesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoritesApp.swift; sourceTree = "<group>"; };
+		4662FF5B291D9A4800A37D65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4662FF5D291D9A4B00A37D65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4662FF60291D9A4B00A37D65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4662FF62291D9A4B00A37D65 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4662FF65291D9A4B00A37D65 /* Meteorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meteorites.xcdatamodel; sourceTree = "<group>"; };
+		4662FF67291D9A4B00A37D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4662FF70291D9B8D00A37D65 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		4662FF73291D9C8800A37D65 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4662FF75291D9CCD00A37D65 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		4662FF77291D9D7B00A37D65 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		4662FF79291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegionDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4662FF53291D9A4800A37D65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4662FF4D291D9A4800A37D65 = {
+			isa = PBXGroup;
+			children = (
+				4662FF58291D9A4800A37D65 /* Meteorites */,
+				4662FF57291D9A4800A37D65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4662FF57291D9A4800A37D65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF56291D9A4800A37D65 /* Meteorites.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4662FF58291D9A4800A37D65 /* Meteorites */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF72291D9C4800A37D65 /* ManagerDelegate */,
+				4662FF6F291D9B6A00A37D65 /* Model */,
+				4662FF6E291D9B5A00A37D65 /* View */,
+				4662FF6D291D9B3E00A37D65 /* ViewModel */,
+				4662FF59291D9A4800A37D65 /* MeteoritesApp.swift */,
+				4662FF5B291D9A4800A37D65 /* ContentView.swift */,
+				4662FF5D291D9A4B00A37D65 /* Assets.xcassets */,
+				4662FF62291D9A4B00A37D65 /* Persistence.swift */,
+				4662FF67291D9A4B00A37D65 /* Info.plist */,
+				4662FF64291D9A4B00A37D65 /* Meteorites.xcdatamodeld */,
+				4662FF5F291D9A4B00A37D65 /* Preview Content */,
+			);
+			path = Meteorites;
+			sourceTree = "<group>";
+		};
+		4662FF5F291D9A4B00A37D65 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF60291D9A4B00A37D65 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4662FF6D291D9B3E00A37D65 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF77291D9D7B00A37D65 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4662FF6E291D9B5A00A37D65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF73291D9C8800A37D65 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4662FF6F291D9B6A00A37D65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF70291D9B8D00A37D65 /* Database.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4662FF72291D9C4800A37D65 /* ManagerDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF75291D9CCD00A37D65 /* LocationManagerDelegate.swift */,
+				4662FF79291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift */,
+			);
+			path = ManagerDelegate;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4662FF55291D9A4800A37D65 /* Meteorites */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4662FF6A291D9A4B00A37D65 /* Build configuration list for PBXNativeTarget "Meteorites" */;
+			buildPhases = (
+				4662FF52291D9A4800A37D65 /* Sources */,
+				4662FF53291D9A4800A37D65 /* Frameworks */,
+				4662FF54291D9A4800A37D65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Meteorites;
+			productName = Meteorites;
+			productReference = 4662FF56291D9A4800A37D65 /* Meteorites.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4662FF4E291D9A4800A37D65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					4662FF55291D9A4800A37D65 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 4662FF51291D9A4800A37D65 /* Build configuration list for PBXProject "Meteorites" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4662FF4D291D9A4800A37D65;
+			productRefGroup = 4662FF57291D9A4800A37D65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4662FF55291D9A4800A37D65 /* Meteorites */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4662FF54291D9A4800A37D65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4662FF61291D9A4B00A37D65 /* Preview Assets.xcassets in Resources */,
+				4662FF5E291D9A4B00A37D65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4662FF52291D9A4800A37D65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4662FF66291D9A4B00A37D65 /* Meteorites.xcdatamodeld in Sources */,
+				4662FF74291D9C8800A37D65 /* MapView.swift in Sources */,
+				4662FF63291D9A4B00A37D65 /* Persistence.swift in Sources */,
+				4662FF7A291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift in Sources */,
+				4662FF5C291D9A4800A37D65 /* ContentView.swift in Sources */,
+				4662FF71291D9B8D00A37D65 /* Database.swift in Sources */,
+				4662FF76291D9CCD00A37D65 /* LocationManagerDelegate.swift in Sources */,
+				4662FF5A291D9A4800A37D65 /* MeteoritesApp.swift in Sources */,
+				4662FF78291D9D7B00A37D65 /* MapViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4662FF68291D9A4B00A37D65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4662FF69291D9A4B00A37D65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4662FF6B291D9A4B00A37D65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Meteorites/Preview Content\"";
+				DEVELOPMENT_TEAM = 36QBTUSG6B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cerna.Meteorites;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4662FF6C291D9A4B00A37D65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Meteorites/Preview Content\"";
+				DEVELOPMENT_TEAM = 36QBTUSG6B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cerna.Meteorites;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4662FF51291D9A4800A37D65 /* Build configuration list for PBXProject "Meteorites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4662FF68291D9A4B00A37D65 /* Debug */,
+				4662FF69291D9A4B00A37D65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4662FF6A291D9A4B00A37D65 /* Build configuration list for PBXNativeTarget "Meteorites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4662FF6B291D9A4B00A37D65 /* Debug */,
+				4662FF6C291D9A4B00A37D65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4662FF64291D9A4B00A37D65 /* Meteorites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4662FF65291D9A4B00A37D65 /* Meteorites.xcdatamodel */,
+			);
+			currentVersion = 4662FF65291D9A4B00A37D65 /* Meteorites.xcdatamodel */;
+			path = Meteorites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4662FF4E291D9A4800A37D65 /* Project object */;
+}
