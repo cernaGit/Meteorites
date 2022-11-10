@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4662FF5A291D9A4800A37D65 /* MeteoritesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF59291D9A4800A37D65 /* MeteoritesApp.swift */; };
-		4662FF5C291D9A4800A37D65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF5B291D9A4800A37D65 /* ContentView.swift */; };
 		4662FF5E291D9A4B00A37D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4662FF5D291D9A4B00A37D65 /* Assets.xcassets */; };
 		4662FF61291D9A4B00A37D65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4662FF60291D9A4B00A37D65 /* Preview Assets.xcassets */; };
 		4662FF63291D9A4B00A37D65 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF62291D9A4B00A37D65 /* Persistence.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		4662FF56291D9A4800A37D65 /* Meteorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4662FF59291D9A4800A37D65 /* MeteoritesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoritesApp.swift; sourceTree = "<group>"; };
-		4662FF5B291D9A4800A37D65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4662FF5D291D9A4B00A37D65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4662FF60291D9A4B00A37D65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4662FF62291D9A4B00A37D65 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				4662FF6E291D9B5A00A37D65 /* View */,
 				4662FF6D291D9B3E00A37D65 /* ViewModel */,
 				4662FF59291D9A4800A37D65 /* MeteoritesApp.swift */,
-				4662FF5B291D9A4800A37D65 /* ContentView.swift */,
 				4662FF5D291D9A4B00A37D65 /* Assets.xcassets */,
 				4662FF62291D9A4B00A37D65 /* Persistence.swift */,
 				4662FF67291D9A4B00A37D65 /* Info.plist */,
@@ -196,7 +193,6 @@
 				4662FF74291D9C8800A37D65 /* MapView.swift in Sources */,
 				4662FF63291D9A4B00A37D65 /* Persistence.swift in Sources */,
 				4662FF7A291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift in Sources */,
-				4662FF5C291D9A4800A37D65 /* ContentView.swift in Sources */,
 				4662FF71291D9B8D00A37D65 /* Database.swift in Sources */,
 				4662FF76291D9CCD00A37D65 /* LocationManagerDelegate.swift in Sources */,
 				4662FF5A291D9A4800A37D65 /* MeteoritesApp.swift in Sources */,

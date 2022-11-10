@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Meteorites: Codable {
+struct Meteorites: Codable, Identifiable {
     let name, id: String
     let nametype: Nametype
     let recclass: String

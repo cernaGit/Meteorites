@@ -18,7 +18,8 @@ struct MapViewModel: UIViewRepresentable {
     
     @State var mapView = MKMapView()
     @State var locationManager: CLLocationManager!
-    
+    @State private var meteorites : [Meteorites] = []
+
     
     func makeUIView(context: Context) -> MKMapView {
         self.locationManager.requestAlwaysAuthorization()
