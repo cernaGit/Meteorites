@@ -5,7 +5,9 @@
 //  Created by Kateřina Černá on 10.11.2022.
 //
 
-import Foundation
+import SwiftUI
+import CoreLocationUI
+import MapKit
 
 struct Meteorites: Codable, Identifiable {
     let name, id: String
@@ -21,6 +23,14 @@ struct Meteorites: Codable, Identifiable {
         case name, id, nametype, recclass, mass, fall, year, reclat, reclong, geolocation
         case computedRegionCbhkFwbd = ":@computed_region_cbhk_fwbd"
         case computedRegionNnqa25F4 = ":@computed_region_nnqa_25f4"
+    }
+    
+    var location: CLLocation {
+        return CLLocation(latitude: (self.reclat)?.toDouble() ?? 0.0, longitude: (self.reclong)?.toDouble() ?? 0.0)
+    }
+
+    func distance(to location: CLLocation) -> CLLocationDistance {
+        return location.distance(from: self.location)
     }
 }
 

@@ -17,6 +17,9 @@
 		4662FF76291D9CCD00A37D65 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF75291D9CCD00A37D65 /* LocationManagerDelegate.swift */; };
 		4662FF78291D9D7B00A37D65 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF77291D9D7B00A37D65 /* MapViewModel.swift */; };
 		4662FF7A291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF79291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift */; };
+		4662FF7C291ED61500A37D65 /* MeteoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF7B291ED61500A37D65 /* MeteoritesListView.swift */; };
+		4662FF7F291EDC8B00A37D65 /* Extencion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF7E291EDC8B00A37D65 /* Extencion.swift */; };
+		4662FF81291EE23600A37D65 /* MeteoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF80291EE23600A37D65 /* MeteoritesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		4662FF75291D9CCD00A37D65 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		4662FF77291D9D7B00A37D65 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4662FF79291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKCoordinateRegionDelegate.swift; sourceTree = "<group>"; };
+		4662FF7B291ED61500A37D65 /* MeteoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoritesListView.swift; sourceTree = "<group>"; };
+		4662FF7E291EDC8B00A37D65 /* Extencion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extencion.swift; sourceTree = "<group>"; };
+		4662FF80291EE23600A37D65 /* MeteoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoritesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		4662FF58291D9A4800A37D65 /* Meteorites */ = {
 			isa = PBXGroup;
 			children = (
+				4662FF7D291EDC7900A37D65 /* Extencion */,
 				4662FF72291D9C4800A37D65 /* ManagerDelegate */,
 				4662FF6F291D9B6A00A37D65 /* Model */,
 				4662FF6E291D9B5A00A37D65 /* View */,
@@ -90,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				4662FF77291D9D7B00A37D65 /* MapViewModel.swift */,
+				4662FF80291EE23600A37D65 /* MeteoritesListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4662FF73291D9C8800A37D65 /* MapView.swift */,
+				4662FF7B291ED61500A37D65 /* MeteoritesListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +126,14 @@
 				4662FF79291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift */,
 			);
 			path = ManagerDelegate;
+			sourceTree = "<group>";
+		};
+		4662FF7D291EDC7900A37D65 /* Extencion */ = {
+			isa = PBXGroup;
+			children = (
+				4662FF7E291EDC8B00A37D65 /* Extencion.swift */,
+			);
+			path = Extencion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +207,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4662FF66291D9A4B00A37D65 /* Meteorites.xcdatamodeld in Sources */,
+				4662FF7F291EDC8B00A37D65 /* Extencion.swift in Sources */,
 				4662FF74291D9C8800A37D65 /* MapView.swift in Sources */,
 				4662FF63291D9A4B00A37D65 /* Persistence.swift in Sources */,
 				4662FF7A291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift in Sources */,
 				4662FF71291D9B8D00A37D65 /* Database.swift in Sources */,
+				4662FF7C291ED61500A37D65 /* MeteoritesListView.swift in Sources */,
 				4662FF76291D9CCD00A37D65 /* LocationManagerDelegate.swift in Sources */,
+				4662FF81291EE23600A37D65 /* MeteoritesListViewModel.swift in Sources */,
 				4662FF5A291D9A4800A37D65 /* MeteoritesApp.swift in Sources */,
 				4662FF78291D9D7B00A37D65 /* MapViewModel.swift in Sources */,
 			);
@@ -328,6 +348,10 @@
 				DEVELOPMENT_TEAM = 36QBTUSG6B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Meteorites/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please, allow even background GPS";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Please, allow even background GPS";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please, allow even background GPS";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -357,6 +381,10 @@
 				DEVELOPMENT_TEAM = 36QBTUSG6B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Meteorites/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please, allow even background GPS";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Please, allow even background GPS";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please, allow even background GPS";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

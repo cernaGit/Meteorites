@@ -59,5 +59,42 @@ extension LocationManager: CLLocationManagerDelegate {
         locationStatus = status
     }
     
+    func setupLocationManger()
+    {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+
+    func checkLocationSevices()
+    {
+        if CLLocationManager.locationServicesEnabled()
+        {
+            setupLocationManger()
+            checkLocationAuthorizatiob()
+        }
+        else
+        {
+
+        }
+    }
+    func checkLocationAuthorizatiob()
+    {
+        switch CLLocationManager.authorizationStatus()
+        {
+        case .denied:
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            break
+        case .authorizedAlways:
+            break
+
+         default:
+            break
+        }
+    }
+    
 }
 

@@ -13,7 +13,6 @@ import Combine
 struct MapView: View {
     var viewModelKit = MapViewModel()
     @State private var region = MKCoordinateRegion.defaultRegion
-    @State var isModal: Bool = false
     @ObservedObject private var locationManager = LocationManager()
     @State var mapView = MKMapView()
     @State private var cancellable: AnyCancellable?
@@ -25,8 +24,8 @@ struct MapView: View {
     
     
     @State private var meteorites: [Meteorites] = []
+    
     private func readJSON() {
-        
         guard let mapUrl = URL(string: "https://data.nasa.gov/resource/gh4g-9sfh.json") else { return }
         URLSession.shared.dataTask(with: mapUrl) { (data, response, error) in
             if error == nil {
@@ -35,6 +34,7 @@ struct MapView: View {
                     
                     DispatchQueue.main.async {
                         self.meteorites = parResult
+                        print(parResult)
                     }
                 } catch let jsonError{
                     print("An error occurred + \(jsonError)")
@@ -52,7 +52,7 @@ struct MapView: View {
                 {
                     meteorites in
                     MapAnnotation(coordinate:
-                                    CLLocationCoordinate2D(latitude: (meteorites.reclat! as NSString).doubleValue, longitude: (meteorites.reclong! as NSString).doubleValue)
+                                    CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)
                     ){
                         VStack {
                             Group {

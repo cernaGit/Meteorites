@@ -13,7 +13,21 @@ struct MeteoritesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MapView()
+                TabView {
+                    MapView()
+                        .tabItem {
+                            Label("Map", systemImage: "map.fill")
+                        }
+
+                    MeteoritesListView()
+                        .tabItem {
+                            Label("List", systemImage: "list.dash")
+                        }
+                }
+            .onAppear() {
+                UITabBar.appearance().backgroundColor = .white
+            }.accentColor(.black)
+            .toolbarColorScheme(.dark)
         }
     }
 }
