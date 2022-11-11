@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreLocationUI
+import MapKit
 
 struct MeteoritesListView: View {
     
@@ -32,8 +34,16 @@ struct MeteoritesListView: View {
     var body: some View {
         VStack {
             List(meteorites) { todo in
-                    Text(String(todo.name))
-            }.onAppear() {
+                HStack {
+                    Image(systemName: "globe.europe.africa")
+                        .resizable()
+                        .frame(width: 20.0, height: 20.0)
+                    
+                    Text(String(todo.name)).font(.title2)
+                    Spacer()
+                }
+            }
+            .onAppear() {
                 getJSONList() {
                     (meteorites) in
                     self.fetch.meteorites = meteorites
