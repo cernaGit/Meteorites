@@ -13,6 +13,8 @@ struct MeteoritesListView: View {
     
     var fetch = MeteoritesListViewModel()
     @State private var meteorites : [Meteorites] = []
+    @ObservedObject private var locationManager = LocationManager()
+    private var deviceLocation: CLLocation?
 
     func getJSONList(completion:@escaping ([Meteorites]) -> ()) {
         guard let mapUrl = URL(string: "https://data.nasa.gov/resource/gh4g-9sfh.json") else { return }
@@ -41,10 +43,12 @@ struct MeteoritesListView: View {
                     
                     Text(String(todo.name)).font(.title2)
                     Spacer()
+                    Text("XX Km")
                 }
             }
             .onAppear() {
-                getJSONList() {
+                getJSONList()
+                {
                     (meteorites) in
                     self.fetch.meteorites = meteorites
                 }

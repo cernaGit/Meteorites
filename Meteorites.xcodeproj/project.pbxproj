@@ -20,6 +20,7 @@
 		4662FF7C291ED61500A37D65 /* MeteoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF7B291ED61500A37D65 /* MeteoritesListView.swift */; };
 		4662FF7F291EDC8B00A37D65 /* Extencion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF7E291EDC8B00A37D65 /* Extencion.swift */; };
 		4662FF81291EE23600A37D65 /* MeteoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF80291EE23600A37D65 /* MeteoritesListViewModel.swift */; };
+		4662FF83291FA15500A37D65 /* BubbleMarkerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4662FF82291FA15500A37D65 /* BubbleMarkerMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4662FF7B291ED61500A37D65 /* MeteoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoritesListView.swift; sourceTree = "<group>"; };
 		4662FF7E291EDC8B00A37D65 /* Extencion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extencion.swift; sourceTree = "<group>"; };
 		4662FF80291EE23600A37D65 /* MeteoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoritesListViewModel.swift; sourceTree = "<group>"; };
+		4662FF82291FA15500A37D65 /* BubbleMarkerMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleMarkerMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				4662FF73291D9C8800A37D65 /* MapView.swift */,
 				4662FF7B291ED61500A37D65 /* MeteoritesListView.swift */,
+				4662FF82291FA15500A37D65 /* BubbleMarkerMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				4662FF66291D9A4B00A37D65 /* Meteorites.xcdatamodeld in Sources */,
 				4662FF7F291EDC8B00A37D65 /* Extencion.swift in Sources */,
 				4662FF74291D9C8800A37D65 /* MapView.swift in Sources */,
+				4662FF83291FA15500A37D65 /* BubbleMarkerMapView.swift in Sources */,
 				4662FF63291D9A4B00A37D65 /* Persistence.swift in Sources */,
 				4662FF7A291D9DFA00A37D65 /* MKCoordinateRegionDelegate.swift in Sources */,
 				4662FF71291D9B8D00A37D65 /* Database.swift in Sources */,

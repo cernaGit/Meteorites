@@ -14,6 +14,7 @@ class LocationManager: NSObject, ObservableObject {
     @Published var location: CLLocation?
     @Published var lastLocation: CLLocation?
     @Published var locationStatus: CLAuthorizationStatus?
+    let manager = CLLocationManager()
 
     
     override init() {
@@ -78,23 +79,15 @@ extension LocationManager: CLLocationManagerDelegate {
         }
     }
     func checkLocationAuthorizatiob()
-    {
-        switch CLLocationManager.authorizationStatus()
         {
-        case .denied:
-            break
+        switch manager.authorizationStatus {
+        case .restricted, .denied:
+                break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
-            break
-        case .restricted:
-            break
-        case .authorizedAlways:
-            break
-
-         default:
+        default:
             break
         }
     }
-    
 }
 

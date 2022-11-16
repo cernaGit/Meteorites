@@ -25,4 +25,6 @@ struct MapViewModel: UIViewRepresentable {
         self.locationManager.requestAlwaysAuthorization()
         return mapView
     }
+    
+    
 }

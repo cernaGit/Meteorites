@@ -6,10 +6,10 @@
 //
 
 import MapKit
+import SwiftUI
 
 extension String
 {
-    /// EZSE: Converts String to Double
     public func toDouble() -> Double?
     {
        if let num = NumberFormatter().number(from: self) {
@@ -20,13 +20,24 @@ extension String
      }
 }
 
-extension Array where Element == Meteorites {
-
-    mutating func sort(by location: CLLocation) {
-         return sort(by: { $0.distance(to: location) < $1.distance(to: location) })
+public struct UltraPlainButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
     }
+}
 
-    func sorted(by location: CLLocation) -> [Meteorites] {
-        return sorted(by: { $0.distance(to: location) < $1.distance(to: location) })
+struct Tappable: ViewModifier {
+    let action: () -> ()
+    func body(content: Content) -> some View {
+        Button(action: self.action) {
+            content
+        }
+        .buttonStyle(UltraPlainButtonStyle())
+    }
+}
+
+extension View {
+    func tappable(do action: @escaping () -> ()) -> some View {
+        self.modifier(Tappable(action: action))
     }
 }

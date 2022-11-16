@@ -10,5 +10,4 @@ import SwiftUI
 class MeteoritesListViewModel {
     @State var meteorites : [Meteorites] = []
 
-
 }

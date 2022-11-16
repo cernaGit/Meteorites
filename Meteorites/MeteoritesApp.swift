@@ -26,8 +26,8 @@ struct MeteoritesApp: App {
                 }
             .onAppear() {
                 UITabBar.appearance().backgroundColor = .white
-            }.accentColor(.black)
-            .toolbarColorScheme(.dark)
+            }.accentColor(.black).toolbarColorScheme(.dark)
+
         }
     }
 }

@@ -22,8 +22,8 @@ struct MapView: View {
         }
     }
     
-    
     @State private var meteorites: [Meteorites] = []
+    @State var showingAlert : Bool = false
     
     private func readJSON() {
         guard let mapUrl = URL(string: "https://data.nasa.gov/resource/gh4g-9sfh.json") else { return }
@@ -34,7 +34,7 @@ struct MapView: View {
                     
                     DispatchQueue.main.async {
                         self.meteorites = parResult
-                        print(parResult)
+                        //print(parResult)
                     }
                 } catch let jsonError{
                     print("An error occurred + \(jsonError)")
@@ -54,17 +54,10 @@ struct MapView: View {
                     MapAnnotation(coordinate:
                                     CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)
                     ){
-                        VStack {
-                            Group {
-                                Image(systemName: "mappin.circle.fill")
-                                    .resizable()
-                                    .frame(width: 30.0, height: 30.0)
-                                Circle()
-                                    .frame(width: 8.0, height: 8.0)
-                            }
-                            .foregroundColor(.red)
-                            Text(meteorites.name)
-                        }
+                        BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass)
+                            .onTapGesture(count: 1, perform: {
+                            self.showingAlert = true
+                        })
                     }
                 }
             }
