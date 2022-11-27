@@ -54,7 +54,7 @@ struct MapView: View {
                     MapAnnotation(coordinate:
                                     CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)
                     ){
-                        BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass)
+                        BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass, destination: String(meteorites.getDistance() ?? 0.0))
                             .onTapGesture(count: 1, perform: {
                             self.showingAlert = true
                         })

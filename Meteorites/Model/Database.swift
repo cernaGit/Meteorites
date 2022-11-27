@@ -51,7 +51,7 @@ struct Meteorites: Codable, Identifiable {
         
         distanceInMeters.round()
         
-        return "\(Int(distanceInMeters)) m"
+        return "\(Double(distanceInMeters)) m"
     }
     
     // MARK: Sort Array

@@ -16,6 +16,7 @@ struct MeteoritesListView: View {
     @ObservedObject private var locationManager = LocationManager()
     private var deviceLocation: CLLocation?
 
+    
     func getJSONList(completion:@escaping ([Meteorites]) -> ()) {
         guard let mapUrl = URL(string: "https://data.nasa.gov/resource/gh4g-9sfh.json") else { return }
         URLSession.shared.dataTask(with: mapUrl) { (data, response, error) in
@@ -42,8 +43,10 @@ struct MeteoritesListView: View {
                         .frame(width: 20.0, height: 20.0)
                     
                     Text(String(todo.name)).font(.title2)
+                    //todo.sortedArrayByDistance(array: meteorites)
+                    //todo.setDistance(meteorites)
                     Spacer()
-                    Text("XX Km")
+                    Text(String("\(todo.getDistance() ?? 0.0) Km"))
                 }
             }
             .onAppear() {

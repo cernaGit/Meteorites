@@ -16,7 +16,7 @@ struct BubbleMarkerMapView: View {
     @State private var region = MKCoordinateRegion.defaultRegion
 
     
-    let name, recclass: String
+    let name, recclass, destination: String
     @State var showDetail : Bool = false
 
     
@@ -32,7 +32,7 @@ struct BubbleMarkerMapView: View {
                         Image(systemName: "calendar")
                         Text("rok").bold()
                     }
-                    Text("Vzdálenost: \("456 km")")
+                    Text("Vzdálenost: \(destination) km")
                         .font(.body)
                         .fontWeight(.bold)
                         .bold()
