@@ -38,15 +38,8 @@ struct MeteoritesListView: View {
         VStack {
             List(meteorites) { todo in
                 HStack {
-                    Image(systemName: "globe.europe.africa")
-                        .resizable()
-                        .frame(width: 20.0, height: 20.0)
-                    
-                    Text(String(todo.name)).font(.title2)
-                    //todo.sortedArrayByDistance(array: meteorites)
-                    //todo.setDistance(meteorites)
-                    Spacer()
-                    Text(String("\(todo.getDistance() ?? 0.0) Km"))
+                    ListRowMeteoritesView(name: todo.name, recclass: todo.recclass,year: String(todo.year!), distance: String(todo.getDistance() ?? 0.0))
+                        .listRowSeparator(.automatic)
                 }
             }
             .onAppear() {

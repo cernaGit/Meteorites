@@ -18,6 +18,15 @@ extension String
                 return nil
             }
      }
+    
+    func toDate(dateFormat: String) -> Date? {
+
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = dateFormat
+
+      let date: Date? = dateFormatter.date(from: self)
+      return date
+  }
 }
 
 public struct UltraPlainButtonStyle: ButtonStyle {
@@ -41,3 +50,4 @@ extension View {
         self.modifier(Tappable(action: action))
     }
 }
+
