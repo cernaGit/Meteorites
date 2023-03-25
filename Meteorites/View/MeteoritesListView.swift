@@ -14,8 +14,19 @@ struct MeteoritesListView: View {
     var fetch = MeteoritesListViewModel()
     @State private var meteorites : [Meteorites] = []
     @ObservedObject private var locationManager = LocationManager()
-    private var deviceLocation: CLLocation?
-
+    @State private var userLocation: CLLocation?
+    
+    var sortedMeteorites: [Meteorites] {
+        meteorites.sorted { meteorite1, meteorite2 in
+            if let userLocation = userLocation {
+                let location1 = CLLocation(latitude: Double(meteorite1.geolocation!.latitude)!, longitude: Double(meteorite1.geolocation!.latitude)!)
+                let location2 = CLLocation(latitude: Double(meteorite2.geolocation!.latitude)!, longitude: Double(meteorite2.geolocation!.latitude)!)
+                return location1.distance(from: userLocation) < location2.distance(from: userLocation)
+            } else {
+                return meteorite1.name < meteorite2.name
+            }
+        }
+    }
     
     func getJSONList(completion:@escaping ([Meteorites]) -> ()) {
         guard let mapUrl = URL(string: "https://data.nasa.gov/resource/gh4g-9sfh.json") else { return }
@@ -36,9 +47,9 @@ struct MeteoritesListView: View {
     
     var body: some View {
         VStack {
-            List(meteorites) { todo in
+            List(sortedMeteorites) { todo in
                 HStack {
-                    ListRowMeteoritesView(name: todo.name, recclass: todo.recclass,year: String(todo.year!), distance: String(todo.getDistance() ?? 0.0))
+                    ListRowMeteoritesView(name: todo.name, recclass: todo.recclass, year: String(todo.year!))
                         .listRowSeparator(.automatic)
                 }
             }

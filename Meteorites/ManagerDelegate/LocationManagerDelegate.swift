@@ -15,7 +15,7 @@ class LocationManager: NSObject, ObservableObject {
     @Published var lastLocation: CLLocation?
     @Published var locationStatus: CLAuthorizationStatus?
     let manager = CLLocationManager()
-
+    @Published var lastKnownLocation: CLLocation?
     
     override init() {
         super.init()
@@ -27,20 +27,41 @@ class LocationManager: NSObject, ObservableObject {
         locationManager.delegate = self
     }
     
+    func startUpdatingLocation() {
+            self.locationManager.requestWhenInUseAuthorization()
+            self.locationManager.startUpdatingLocation()
+        }
+
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let location = locations.last else { return }
+            self.lastKnownLocation = location
+        }
+
+        func distance(to location: CLLocation) -> CLLocationDistance? {
+            guard let userLocation = self.lastKnownLocation else { return nil }
+            return location.distance(from: userLocation)
+        }
+
+        func distance(to meteorite: Meteorites) -> CLLocationDistance? {
+            guard let lat = Double(meteorite.geolocation!.latitude), let long = Double(meteorite.geolocation!.longitude) else { return nil }
+            let location = CLLocation(latitude: lat, longitude: long)
+            return self.distance(to: location)
+        }
+    
 }
 
 extension LocationManager: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        guard let location = locations.last else { return }
-        locationManager.stopUpdatingLocation()
-        
-        DispatchQueue.main.async {
-            self.location = location
-        }
-        
+    func requestLocation() {
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
     var statusString: String {
         guard let status = locationStatus else {
             return "unknown"

@@ -79,6 +79,9 @@ enum Fall: String, Codable {
 
 struct Geolocation: Codable {
     let latitude, longitude: String
+    var location: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longitude)!)
+    }
 }
 
 enum Nametype: String, Codable {

@@ -11,5 +11,8 @@ import MapKit
 
 class MeteoritesListViewModel {
     @State var meteorites : [Meteorites] = []
-
+    @Published var userLocation = CLLocation()
+    
 }
+
+
