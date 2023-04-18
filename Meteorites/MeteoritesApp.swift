@@ -17,13 +17,14 @@ struct MeteoritesApp: App {
                     MapView()
                         .tabItem {
                             Label("Map", systemImage: "map.fill")
+                                .foregroundColor(.red)
                         }
 
                     MeteoritesListView()
                         .tabItem {
                             Label("List", systemImage: "list.dash")
                         }
-                }
+                }.background(.black)
             .onAppear() {
                 UITabBar.appearance().backgroundColor = .white
             }.accentColor(.black).toolbarColorScheme(.dark)

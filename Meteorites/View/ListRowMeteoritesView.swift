@@ -10,44 +10,58 @@ import SwiftUI
 struct ListRowMeteoritesView: View {
     
     let name, recclass, year: String
-    //let date = Date()
-
-
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        return formatter
+    }()
     
     var body: some View {
         VStack(spacing: 5) {
             HStack {
-                Image(systemName: "globe.europe.africa")
+                Image("meteor_icon")
                     .resizable()
-                    .frame(width: 20.0, height: 20.0)
+                    .frame(width: 30.0, height: 30.0)
+                
                 Spacer()
+                
                 Text(String("\(name)"))
-                    .font(.title2).bold()
+                    .font(.title2)
+                    .bold()
+                
                 Spacer()
-            }.padding()
-                .foregroundColor(.white)
-                .background(.black)
-                .opacity(0.7)
-                .cornerRadius(30)
+            }
+            .padding()
+            .foregroundColor(.red)
+            .background(.black)
+            .cornerRadius(30)
             
             HStack {
                 VStack(alignment:.leading ,spacing: 5) {
-                    Text("Třída: \(recclass) ")
+                    Text("Třída:  \(recclass) ")
                         .bold()
                     
                     HStack {
                         Image(systemName: "calendar")
-                        //Text(date, style: .date).bold()
-                        Text(year)
-                            .font(.subheadline)
+                        
+                        if let date = dateFormatter.date(from: year) {
+                            Text(dateFormatter.string(from: date))
+                                .font(.subheadline)
+                        } else {
+                            Text("Invalid Date")
+                                .foregroundColor(.red)
+                        }
                     }
                 }
                 .padding()
                 
                 Spacer()
-
-            }.padding().foregroundColor(.black).background(.black).opacity(0.4).cornerRadius(30)
+                
+            }
         }
+        .foregroundColor(.black)
+        .cornerRadius(30)
     }
 }
 

@@ -45,11 +45,13 @@ struct MeteoritesListView: View {
         }.resume()
     }
     
+    
+    
     var body: some View {
         VStack {
             List(sortedMeteorites) { todo in
                 HStack {
-                    ListRowMeteoritesView(name: todo.name, recclass: todo.recclass, year: String(todo.year!))
+                    ListRowMeteoritesView(name: todo.name, recclass: todo.recclass, year: todo.year!)
                         .listRowSeparator(.automatic)
                 }
             }
