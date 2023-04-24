@@ -33,13 +33,13 @@ struct ListRowMeteoritesView: View {
                 Spacer()
             }
             .padding()
-            .foregroundColor(.red)
-            .background(.black)
+            .foregroundColor(.white)
+            .background(.gray)
             .cornerRadius(30)
             
             HStack {
                 VStack(alignment:.leading ,spacing: 5) {
-                    Text("Třída:  \(recclass) ")
+                    Text("Class:  \(recclass) ")
                         .bold()
                     
                     HStack {

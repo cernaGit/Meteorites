@@ -15,17 +15,22 @@ struct MeteoritesListView: View {
     @State private var meteorites : [Meteorites] = []
     @ObservedObject private var locationManager = LocationManager()
     @State private var userLocation: CLLocation?
+    @State private var searchText = ""
     
     var sortedMeteorites: [Meteorites] {
-        meteorites.sorted { meteorite1, meteorite2 in
-            if let userLocation = userLocation {
-                let location1 = CLLocation(latitude: Double(meteorite1.geolocation!.latitude)!, longitude: Double(meteorite1.geolocation!.latitude)!)
-                let location2 = CLLocation(latitude: Double(meteorite2.geolocation!.latitude)!, longitude: Double(meteorite2.geolocation!.latitude)!)
-                return location1.distance(from: userLocation) < location2.distance(from: userLocation)
-            } else {
-                return meteorite1.name < meteorite2.name
+        meteorites
+            .filter {
+                searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText)
             }
-        }
+            .sorted { meteorite1, meteorite2 in
+                if let userLocation = userLocation {
+                    let location1 = CLLocation(latitude: Double(meteorite1.geolocation!.latitude)!, longitude: Double(meteorite1.geolocation!.longitude)!)
+                    let location2 = CLLocation(latitude: Double(meteorite2.geolocation!.latitude)!, longitude: Double(meteorite2.geolocation!.longitude)!)
+                    return location1.distance(from: userLocation) < location2.distance(from: userLocation)
+                } else {
+                    return meteorite1.name < meteorite2.name
+                }
+            }
     }
     
     func getJSONList(completion:@escaping ([Meteorites]) -> ()) {
@@ -49,9 +54,11 @@ struct MeteoritesListView: View {
     
     var body: some View {
         VStack {
-            List(sortedMeteorites) { todo in
+            SearchBar(searchText: $searchText)
+            
+            List(sortedMeteorites) { meteorite in
                 HStack {
-                    ListRowMeteoritesView(name: todo.name, recclass: todo.recclass, year: todo.year!)
+                    ListRowMeteoritesView(name: meteorite.name, recclass: meteorite.recclass, year: meteorite.year!)
                         .listRowSeparator(.automatic)
                 }
             }
@@ -63,11 +70,5 @@ struct MeteoritesListView: View {
                 }
             }
         }
-    }
-}
-
-struct MeteoritesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MeteoritesListView()
     }
 }

@@ -42,7 +42,7 @@ struct MapView: View {
             }
         }.resume()
     }
-
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -54,20 +54,20 @@ struct MapView: View {
                     MapAnnotation(coordinate:
                                     CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)
                     ){
-                        BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass, destination: String(meteorites.getDistance() ?? 0.0))
+                        BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass)
                             .onTapGesture(count: 1, perform: {
-                            self.showingAlert = true
-                        })
+                                self.showingAlert = true
+                            })
                     }
                 }
             }
-                    .onAppear{
-                        setCurrentLocation()
-                        readJSON()
-                    }
+            .onAppear{
+                setCurrentLocation()
+                readJSON()
             }
+        }
         .edgesIgnoringSafeArea(.all)
     }
 }
-    
-    
+
+

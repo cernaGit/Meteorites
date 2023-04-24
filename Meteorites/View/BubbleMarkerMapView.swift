@@ -14,9 +14,14 @@ struct BubbleMarkerMapView: View {
     @State private var showTitle = true
     @ObservedObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion.defaultRegion
-
-    let name, recclass, destination: String
-    @State var showDetail : Bool = false
+    
+    let name, recclass: String
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy'_'HH:mm:ss.SSS"
+        return formatter
+    }()
     
     var body: some View {
         VStack(spacing: 0) {
@@ -30,15 +35,15 @@ struct BubbleMarkerMapView: View {
                 VStack (spacing: 8) {
                     HStack {
                         Image(systemName: "calendar")
-                        Text("rok")
-                            .bold()
+                        Text("rok").bold()
+//                        if let date = dateFormatter.date(from: year) {
+//                            Text(dateFormatter.string(from: date))
+//                                .bold()
+//                        } else {
+//                            Text("Invalid Date")
+//                                .foregroundColor(.red)
+//                        }
                     }
-                    Text("Vzdálenost: \(destination) km")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                    
                 }
                 Spacer()
             }
@@ -51,13 +56,13 @@ struct BubbleMarkerMapView: View {
                 .resizable()
                 .frame(width: 30.0, height: 30.0)
                 .foregroundColor(.black)
-
+            
             
         }.buttonStyle(PlainButtonStyle())
-        .tappable {
+            .tappable {
                 withAnimation(.easeInOut) {
                     showTitle.toggle()
-
+                    
                 }
             }
     }
