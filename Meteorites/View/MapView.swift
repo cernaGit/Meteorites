@@ -38,6 +38,12 @@ struct MapView: View {
     @State private var meteorites: [Meteorites] = []
     @State var showingAlert : Bool = false
     
+//    let appToken = "YOUR_APP_TOKEN"
+//    let headers = ["X-App-Token": appToken]
+//
+//    var request = URLRequest(url: url)
+//    request.allHTTPHeaderFields = headers
+    
     private func readJSON() {
         guard let mapUrl = URL(string: "https://data.nasa.gov/resource/gh4g-9sfh.json") else { return }
         URLSession.shared.dataTask(with: mapUrl) { (data, response, error) in
