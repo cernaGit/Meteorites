@@ -10,10 +10,16 @@ import SwiftUI
 struct ListRowMeteoritesView: View {
     
     let name, recclass, year: String
+    let mass: String
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        return formatter
+    }()
+    private let displayDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
         return formatter
     }()
     
@@ -22,42 +28,45 @@ struct ListRowMeteoritesView: View {
             HStack {
                 Image("meteor_icon")
                     .resizable()
-                    .frame(width: 30.0, height: 30.0)
-                
-                Spacer()
-                
-                Text(String("\(name)"))
-                    .font(.title2)
-                    .bold()
-                
-                Spacer()
-            }
-            .padding()
-            .foregroundColor(.white)
-            .background(.gray)
-            .cornerRadius(30)
-            
-            HStack {
-                VStack(alignment:.leading ,spacing: 5) {
-                    Text("Class:  \(recclass) ")
-                        .bold()
-                    
-                    HStack {
-                        Image(systemName: "calendar")
+                    .frame(width: 50.0, height: 50.0)
+                    .padding()
+                HStack {
+                    VStack(alignment:.leading ,spacing: 5) {
+                        Text(String("\(name)"))
+                            .font(.headline)
+                            .bold()
                         
-                        if let date = dateFormatter.date(from: year) {
-                            Text(dateFormatter.string(from: date))
-                                .font(.subheadline)
-                        } else {
-                            Text("Invalid Date")
-                                .foregroundColor(.red)
+                        HStack {
+                            Text("Class:")
+                            Text("\(recclass) ")
+                                .bold()
                         }
+                        .font(.subheadline)
+                        
+                        HStack {
+                            Text("Mass:")
+                            Text("\(mass) ")
+                                .bold()
+                        }
+                        .font(.subheadline)
+
+                        HStack {
+                            Image(systemName: "calendar")
+                            
+                            if let date = dateFormatter.date(from: year) {
+                                Text(displayDateFormatter.string(from: date))
+                            } else {
+                                Text("Invalid Date")
+                                    .foregroundColor(.red)
+                            }
+                        }
+                        .font(.subheadline)
+
                     }
+                    .padding()
+                    
+                    Spacer()
                 }
-                .padding()
-                
-                Spacer()
-                
             }
         }
         .foregroundColor(.black)

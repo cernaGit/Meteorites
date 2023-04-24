@@ -14,11 +14,24 @@ struct MapView: View {
     var viewModelKit = MapViewModel()
     @State private var region = MKCoordinateRegion.defaultRegion
     @ObservedObject private var locationManager = LocationManager()
+    @State private var userCoordinate = CLLocationCoordinate2D()
+    
     @State var mapView = MKMapView()
+    @State private var mapType: MapType = .standard
+    enum MapType: String, CaseIterable {
+        case standard = "Standard"
+        case hybrid = "Hybrid"
+        case satellite = "Satellite"
+    }
+    
     @State private var cancellable: AnyCancellable?
+    
     private func setCurrentLocation() {
         cancellable = locationManager.$location.sink { location in
-            region = MKCoordinateRegion(center: location?.coordinate ?? CLLocationCoordinate2D(), span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+            if let location = location {
+                userCoordinate = location.coordinate
+                region = MKCoordinateRegion(center: userCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+            }
         }
     }
     
@@ -44,30 +57,41 @@ struct MapView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
-                    showsUserLocation: true, userTrackingMode: .constant(.none),
-                    annotationItems: meteorites)
-                {
-                    meteorites in
-                    MapAnnotation(coordinate:
-                                    CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)
-                    ){
-                        BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass)
-                            .onTapGesture(count: 1, perform: {
-                                self.showingAlert = true
-                            })
-                    }
+        VStack {
+            Picker(selection: $mapType, label: Text("Map Type")) {
+                ForEach(MapType.allCases, id: \.self) { type in
+                    Text(type.rawValue.capitalized)
                 }
             }
-            .onAppear{
-                setCurrentLocation()
-                readJSON()
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+            
+            GeometryReader { geometry in
+                ZStack {
+                    Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
+                        showsUserLocation: true, userTrackingMode: .constant(.none),
+                        annotationItems: meteorites)
+                    {
+                        meteorites in
+                        MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)) {
+                            let meteoriteCoordinate = CLLocationCoordinate2D(latitude: (meteorites.reclat)?.toDouble() ?? 0.0, longitude: (meteorites.reclong)?.toDouble() ?? 0.0)
+                            let meteoriteLocation = CLLocation(latitude: meteoriteCoordinate.latitude, longitude: meteoriteCoordinate.longitude)
+                            let userLocation = CLLocation(latitude: userCoordinate.latitude, longitude: userCoordinate.longitude)
+                            let distanceInMeters = userLocation.distance(from: meteoriteLocation)
+                            
+                            BubbleMarkerMapView(name: meteorites.name, recclass: meteorites.recclass, distance: distanceInMeters / 1000.0)
+                                .onTapGesture(count: 1, perform: {
+                                    self.showingAlert = true
+                                })
+                        }
+                    }
+                }
+                .onAppear{
+                    setCurrentLocation()
+                    readJSON()
+                }
             }
+            .edgesIgnoringSafeArea(.all)
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
-
-

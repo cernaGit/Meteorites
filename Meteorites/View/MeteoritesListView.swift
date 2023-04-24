@@ -50,15 +50,13 @@ struct MeteoritesListView: View {
         }.resume()
     }
     
-    
-    
     var body: some View {
         VStack {
             SearchBar(searchText: $searchText)
             
             List(sortedMeteorites) { meteorite in
                 HStack {
-                    ListRowMeteoritesView(name: meteorite.name, recclass: meteorite.recclass, year: meteorite.year!)
+                    ListRowMeteoritesView(name: meteorite.name, recclass: meteorite.recclass, year: meteorite.year!, mass: meteorite.mass ?? "Invalid value")
                         .listRowSeparator(.automatic)
                 }
             }

@@ -16,6 +16,7 @@ struct BubbleMarkerMapView: View {
     @State private var region = MKCoordinateRegion.defaultRegion
     
     let name, recclass: String
+    let distance: Double
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -26,26 +27,21 @@ struct BubbleMarkerMapView: View {
     var body: some View {
         VStack(spacing: 0) {
             VStack (spacing: 10){
-                VStack(spacing: 8) {
-                    Text("Název: \(name)")
-                        .bold()
-                    Text("Třída: \(recclass)")
-                        .bold()
-                }
-                VStack (spacing: 8) {
+                VStack(spacing: 5) {
                     HStack {
-                        Image(systemName: "calendar")
-                        Text("rok").bold()
-//                        if let date = dateFormatter.date(from: year) {
-//                            Text(dateFormatter.string(from: date))
-//                                .bold()
-//                        } else {
-//                            Text("Invalid Date")
-//                                .foregroundColor(.red)
-//                        }
+                        Text("Name:")
+                        Text("\(name)").bold()
+                    }
+                    HStack {
+                        Text("Class:")
+                        Text("\(recclass)").bold()
+                    }
+                    HStack {
+                        Text("Distance:")
+                        Text(String(format: "%.0f km", distance)).bold()
                     }
                 }
-                Spacer()
+                .font(.caption)
             }
             .padding()
             .background(.white)
@@ -56,14 +52,12 @@ struct BubbleMarkerMapView: View {
                 .resizable()
                 .frame(width: 30.0, height: 30.0)
                 .foregroundColor(.black)
-            
-            
-        }.buttonStyle(PlainButtonStyle())
-            .tappable {
-                withAnimation(.easeInOut) {
-                    showTitle.toggle()
-                    
-                }
+        }
+        .buttonStyle(PlainButtonStyle())
+        .tappable {
+            withAnimation(.easeInOut) {
+                showTitle.toggle()
             }
+        }
     }
 }

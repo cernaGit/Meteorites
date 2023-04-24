@@ -25,51 +25,6 @@ struct Meteorites: Codable, Identifiable {
         case computedRegionCbhkFwbd = ":@computed_region_cbhk_fwbd"
         case computedRegionNnqa25F4 = ":@computed_region_nnqa_25f4"
     }
-
-    mutating func setDistance(locationTo: CLLocation?) {
-        guard let locat = locationTo else {
-            return
-        }
-        
-        let pointLocation = CLLocation(latitude: (self.reclat)?.toDouble() ?? 0.0, longitude: (self.reclong)?.toDouble() ?? 0.0)
-        self.distance = pointLocation.distance(from: locat)
-    }
-    
-    func getDistance() -> Double? {
-        return self.distance
-    }
-    
-    func getDistanceString() -> String? {
-        guard var distanceInMeters = distance else {
-            return nil
-        }
-        
-        if distanceInMeters >= 1000 {
-            let distanceInKm = distanceInMeters / 1000
-            return String(format: "%.01f km", distanceInKm)
-        }
-        
-        distanceInMeters.round()
-        
-        return "\(Double(distanceInMeters)) m"
-    }
-    
-    // MARK: Sort Array
-    func sortedArrayByDistance(array: [Meteorites]) -> [Meteorites] {
-        var arraySorted = array
-        
-        arraySorted.sort(by: {
-            guard let first = $0.getDistance(), let second = $1.getDistance() else {
-                return false
-            }
-            
-            return first < second
-        })
-        
-        return arraySorted
-    }
-    
-    
 }
 
 enum Fall: String, Codable {
